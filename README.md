@@ -4,7 +4,7 @@
 >
 > **Project Date:** November 2025
 >
-> **Goal:** To solve critical local problems by delivering tangible, habit-forming products rather than just apps. We are combining expertise in **Embedded Systems with AI/LLM integration**.
+> 
 
 ---
 
@@ -72,9 +72,9 @@ We are a dedicated hardware and software engineering team, specializing in build
 | Name | University / Department | Designation |
 | :--- | :--- | :--- |
 | **Mahir Daiyan Safwaan** | RUET / EEE | Hardware and Software Lead |
-| **Samiya Mehedi Kazi** | RUET / EEE | UI/UX and Operations Lead |
+| **Samiya Mehedi Kazi** | RUET / EEE | Marketing and Operations Lead |
 | **Md. Ismail Mahmood** | BRACU / CS | Cloud Operations Lead |
-| **Jannatul Marjan Dina** | EDU / CSE | Marketing Lead |
+| **Jannatul Marjan Dina** | EDU / CSE | UI/UX Lead |
 
 ---
 
