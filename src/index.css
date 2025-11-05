@@ -1,0 +1,301 @@
+/* 1. Add Tailwind directives at the top */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Paste ALL custom CSS from your original <style> tag below */
+body {
+    font-family: "Space Grotesk", sans-serif;
+    background-color: #000000; /* Deep indigo/black background */
+    color: #e5e7eb;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* The Aurora/Mesh Background - Themed to match buttons */
+/* Note: We apply this to #root, which is React's main container */
+#root::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(
+            at 10% 20%,
+            #3b82f630,
+            transparent 50%
+        ),
+        radial-gradient(at 80% 10%, #6366f130, transparent 50%),
+        radial-gradient(at 70% 80%, #14b8a630, transparent 50%),
+        radial-gradient(at 30% 90%, #a855f730, transparent 50%);
+    z-index: -1;
+    filter: blur(120px);
+    opacity: 0.8;
+}
+
+/* Glassmorphism Panel Style - More refined */
+.glass-panel {
+    background: rgba(
+        15,
+        23,
+        42,
+        0.7
+    ); /* Sightly more opaque dark blue */
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Even more subtle border */
+    border-radius: 1.5rem; /* 24px */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* NEW: Panel Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.panel-fade-in {
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Hide scrollbars */
+.scroll-hidden::-webkit-scrollbar {
+    display: none;
+}
+.scroll-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Custom JSON/Code text style */
+.code-text {
+    color: #5eead4; /* Bright teal */
+    text-shadow: 0 0 8px rgba(94, 234, 212, 0.3);
+}
+
+/* Custom Table Header - Pro look */
+thead th {
+    color: #94a3b8; /* Slate 400 */
+    font-weight: 600;
+    font-size: 0.75rem; /* 12px */
+    text-transform: uppercase;
+    letter-spacing: 0.05em; /* tracking-wider */
+}
+
+/* Table Row - More padding, cleaner borders */
+tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+tbody tr:last-child {
+    border-bottom: none;
+}
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+tbody td {
+    padding-top: 1.25rem; /* 20px */
+    padding-bottom: 1.25rem;
+}
+
+/* Custom Loader: Pulsing Dots (Themed) */
+.loader {
+    display: flex;
+    gap: 8px;
+}
+.loader .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #6366f1; /* Indigo */
+    border-radius: 50%;
+    animation: pulse-dot 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+.loader .dot:nth-child(1) {
+    animation-delay: 0s;
+}
+.loader .dot:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.loader .dot:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+@keyframes pulse-dot {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* Voice Button Pulse Animation */
+.voice-active {
+    animation: pulse-voice 2s infinite;
+}
+@keyframes pulse-voice {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(220, 38, 38, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    }
+}
+
+/* Primary Button Style */
+.btn-primary {
+    background-image: linear-gradient(
+        to right,
+        #4f46e5,
+        #6366f1,
+        #3b82f6
+    );
+    background-size: 200% 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+}
+.btn-primary:hover {
+    background-position: 100% 0;
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+    transform: scale(1.03);
+}
+.btn-primary:disabled {
+    background-image: none;
+    background-color: #374151;
+    opacity: 0.5;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Destructive Button Style */
+.btn-danger {
+    background-image: linear-gradient(
+        to right,
+        #dc2626,
+        #ef4444,
+        #f87171
+    );
+    background-size: 200% 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+}
+.btn-danger:hover {
+    background-position: 100% 0;
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+    transform: scale(1.03);
+}
+.btn-danger:disabled {
+    background-image: none;
+    background-color: #374151;
+    opacity: 0.5;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Ghost Button Style (for File Select) */
+.btn-ghost {
+    background-color: transparent;
+    border: 2px solid #3b82f6;
+    color: #3b82f6;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+.btn-ghost:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    transform: scale(1.03);
+}
+
+/* Chart.js responsiveness */
+.chart-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+
+/* Market Trend List */
+#market-trends-list li {
+    position: relative;
+    padding-left: 28px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 1.125rem; /* text-lg */
+    color: #d1d5db; /* gray-300 */
+}
+#market-trends-list li::before {
+    content: "✨";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    font-size: 1rem;
+}
+
+/* NEW: Q&A Text Area Style */
+.qa-textarea {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e5e7eb;
+    transition: all 0.3s ease;
+}
+.qa-textarea:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: #6366f1;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+    outline: none;
+}
+
+/* --- NEW: Q&A Response Area & Markdown Styling --- */
+#qa-response-area {
+    /* REMOVED white-space: pre-wrap; */
+    line-height: 1.7;
+    color: #d1d5db; /* gray-300 */
+    font-size: 1.125rem; /* text-lg */
+}
+/* Style markdown elements */
+#qa-response-area strong {
+    color: #c4b5fd; /* indigo-300 */
+    font-weight: 600;
+}
+#qa-response-area ul,
+#qa-response-area ol {
+    margin-left: 1.5rem;
+    list-style: revert;
+}
+#qa-response-area table {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+#qa-response-area th,
+#qa-response-area td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+}
+#qa-response-area th {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #c4b5fd;
+    text-align: left;
+}
+#qa-response-area p {
+    margin-bottom: 1rem;
+}
+/* --- End of Q&A Styling --- */
