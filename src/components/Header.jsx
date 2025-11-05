@@ -52,32 +52,7 @@ function Header() {
             </div>
 
             <nav>
-                <ul className="flex items-center space-x-2 sm:space-x-4">
-                    <li>
-                        <a
-                            href="#"
-                            className="hidden sm:block text-gray-300 hover:text-white transition-colors font-medium px-3 py-2 rounded-lg"
-                        >
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            className="hidden md:block text-gray-300 hover:text-white transition-colors font-medium px-3 py-2 rounded-lg"
-                        >
-                            Trends
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            className="text-sm sm:text-base bg-indigo-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-400 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-                        >
-                            My Profile
-                        </a>
-                    </li>
-                </ul>
+                
             </nav>
         </header>
     );
