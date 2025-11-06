@@ -7,8 +7,7 @@ import {
 } from "firebase/auth";
 import { getFirestore, collection } from "firebase/firestore";
 
-// --- Firebase Configuration ---
-// This config was taken from your original index.html file.
+
 const firebaseConfig = {
     apiKey: "AIzaSyAKTCCN07XHfFyDy8PD84qsWqkSRUmpfh4",
     authDomain: "bishleshok.firebaseapp.com",
@@ -19,10 +18,9 @@ const firebaseConfig = {
     measurementId: "G-QPMJWMDLWT",
 };
 
-// --- App ID Handling ---
-// Use the platform-provided __app_id if available, otherwise default.
+
 export const appId =
-    typeof __app_id !== "undefined" ? __app_id : "default-app-id";
+    typeof __app_id !== "undefined" ? firebaseConfig.appId : "default-app-id";
 
 // --- Firebase Initialization ---
 setLogLevel("Debug"); // Enable verbose logging

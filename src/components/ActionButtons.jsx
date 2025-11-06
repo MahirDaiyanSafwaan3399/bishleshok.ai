@@ -15,7 +15,8 @@ function ActionButtons({ isBusy, hasData, onSave, onClear }) {
                 className="w-full btn-primary text-white font-bold py-5 px-6 rounded-lg text-lg"
                 disabled={isDisabled}
             >
-                💾 Save All to Excel (CSV)
+                💾 সব ডেটা এক্সেল (CSV) ফাইলে সেভ করুন{" "}
+                {/* MODIFIED: "Save All to Excel (CSV)" */}
             </button>
             <button
                 id="clear-btn"
@@ -23,7 +24,7 @@ function ActionButtons({ isBusy, hasData, onSave, onClear }) {
                 className="w-full btn-danger text-white font-bold py-5 px-6 rounded-lg text-lg"
                 disabled={isDisabled}
             >
-                🧹 Clear All Data
+                🧹 সব ডেটা মুছে ফেলুন {/* MODIFIED: "Clear All Data" */}
             </button>
         </div>
     );

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { marked } from "marked";
 
 function Loader() {
     return (
@@ -17,13 +18,21 @@ function Loader() {
 }
 
 function MarketTrends({ isLoading, trends, summary, onFetchTrends, isBusy }) {
+    useEffect(() => {
+        // Configure marked for nice rendering
+        marked.setOptions({
+            breaks: true,
+            gfm: true,
+        });
+    }, []);
+
     return (
         <div
             className="glass-panel p-8 flex flex-col panel-fade-in"
             style={{ animationDelay: "500ms" }}
         >
             <h2 className="text-2xl font-semibold border-b border-white/10 pb-4 text-gray-100">
-                Market Trends: Bangladesh
+                বাজার প্রবণতা: বাংলাদেশ এখন কোথায়?
             </h2>
 
             {/* Conditional Content */}
@@ -38,17 +47,28 @@ function MarketTrends({ isLoading, trends, summary, onFetchTrends, isBusy }) {
                         </p>
                     ) : (
                         <>
-                            <ul id="market-trends-list" className="space-y-2">
+                            <ul
+                                id="market-trends-list"
+                                className="space-y-3 prose prose-invert max-w-none text-gray-200"
+                            >
                                 {trends.map((item, index) => (
-                                    <li key={index}>{item}</li>
+                                    <li
+                                        key={index}
+                                        dangerouslySetInnerHTML={{
+                                            __html: marked(item),
+                                        }}
+                                    />
                                 ))}
                             </ul>
-                            <p
-                                id="trends-summary"
-                                className="text-sm text-teal-300 italic"
-                            >
-                                {summary}
-                            </p>
+                            {summary && (
+                                <div
+                                    id="trends-summary"
+                                    className="prose prose-invert text-sm text-teal-300 italic"
+                                    dangerouslySetInnerHTML={{
+                                        __html: marked(summary),
+                                    }}
+                                />
+                            )}
                         </>
                     )}
                 </div>

@@ -22,7 +22,7 @@ function VoiceInput({
         >
             <div>
                 <h2 className="text-2xl font-semibold border-b border-white/10 pb-4 text-gray-100">
-                    Extract from Voice
+                    ভয়েস থেকে তথ্য নিন {/* MODIFIED: "Extract from Voice" */}
                 </h2>
                 <p className="text-base text-gray-400 mt-4 leading-relaxed">
                     <br />
@@ -42,16 +42,20 @@ function VoiceInput({
                     style={isRecording ? { backgroundImage: "none" } : {}}
                 >
                     <span id="voice-btn-text">
-                        {isRecording
-                            ? "🔴 Listening..."
-                            : "🗣️ Start Bangla Voice Input"}
+                        {
+                            isRecording
+                                ? "🔴 শুনছি..." /* MODIFIED: "Listening..." */
+                                : "🗣️ বাংলায় বলা শুরু করুন" /* MODIFIED: "Start Bangla Voice Input" */
+                        }
                     </span>
                 </button>
                 <div
                     id="mic-status"
                     className="text-center text-sm text-gray-400 pt-2"
                 >
-                    {isRecording ? "Speak clearly in Bengali." : micStatus}
+                    {isRecording
+                        ? "পরিষ্কার করে বাংলায় বলুন।" /* MODIFIED: "Speak clearly in Bengali." */
+                        : micStatus}
                 </div>
                 {/* Only show TTS status if there is a message */}
                 {ttsStatus && (

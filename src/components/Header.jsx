@@ -10,9 +10,6 @@ function LogoIcon({ className = "h-10 w-10" }) {
             role="img"
             aria-labelledby="bishleshokLogoTitle"
         >
-            <title id="bishleshokLogoTitle">
-                bishleshok.ai logo (solid white)
-            </title>
 
             {/* Solid background with rounded corners */}
             <rect x="6" y="6" width="52" height="52" rx="13" fill="#ffffff" />

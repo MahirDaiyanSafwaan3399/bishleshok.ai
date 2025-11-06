@@ -17,6 +17,7 @@
     "firebase": "^12.5.0",
     "gh-pages": "^6.3.0",
     "marked": "^16.4.1",
+    "motion": "^12.23.24",
     "react": "^19.1.1",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.1.1",

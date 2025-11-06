@@ -71,7 +71,7 @@ function ReceiptInput({ isBusy, onFileSelect, onFileDrop }) {
             style={{ animationDelay: "100ms" }}
         >
             <h2 className="text-2xl font-semibold border-b border-white/10 pb-4 text-gray-100">
-                Extract from Receipt
+                রসিদ আপলোড করুন
             </h2>
 
             {/* Drag & Drop Zone */}
@@ -100,7 +100,7 @@ function ReceiptInput({ isBusy, onFileSelect, onFileDrop }) {
                 </svg>
 
                 <p className="mt-4 text-lg font-medium text-gray-300">
-                    Drag & Drop Image/PDF Here
+                    ছবি অথবা পিডিএফ আপলোড করুন
                 </p>
                 <p className="text-sm text-gray-500 my-2">OR</p>
                 <input

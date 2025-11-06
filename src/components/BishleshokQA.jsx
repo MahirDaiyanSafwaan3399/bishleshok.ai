@@ -29,7 +29,7 @@ function BishleshokQA({ isBusy, isLoading, responseHtml, onSubmit, hasData }) {
             style={{ animationDelay: "600ms" }}
         >
             <h2 className="text-2xl font-semibold border-b border-white/10 pb-4 text-gray-100">
-                Bishleshok.ai
+                bishleshok.ai
             </h2>
             <p className="text-gray-400">
                 "আমার কোন পণ্যটি সবচেয়ে লাভজনক?" or "আগামী সপ্তাহে আমার কী স্টক
@@ -50,7 +50,9 @@ function BishleshokQA({ isBusy, isLoading, responseHtml, onSubmit, hasData }) {
                     className="w-full btn-primary text-white font-bold py-4 px-6 rounded-lg text-lg"
                     disabled={isButtonDisabled}
                 >
-                    {isLoading ? "Analyzing..." : "Ask Bishleshok.ai"}
+                    {isLoading
+                        ? "Analyzing..."
+                        : "bishleshok.ai কে জিজ্ঞেস করুন"}
                 </button>
             </div>
             <div className="mt-6 min-h-[100px]">

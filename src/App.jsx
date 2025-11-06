@@ -277,9 +277,7 @@ function App() {
             updateStatus("Database not ready.", true);
             return;
         }
-        // NOTE: React apps should use a custom modal, not window.confirm.
-        // For this conversion, we'll assume confirmation.
-        // In a real app, you'd set a modal state here.
+        
         console.warn(
             "clearAllData triggered. Bypassing window.confirm for React."
         );
@@ -585,7 +583,7 @@ function App() {
         setTrendsSummary("");
 
         const userPrompt =
-            "What are the top 5 most sold goodies along with the current market price or fast-moving consumer goods in Bangladesh right now? List them as a simple numbered list. After the list, provide a very brief 1-2 sentence summary of the current market trend. Use today's date, " +
+            "What are the top 5 most sold goodies along with the current market price or fast-moving consumer goods in Bangladesh right now? List them as a simple numbered list. GIVE ME THE RESPONSE IN BANGLA. After the list, provide a very brief 1-2 sentence summary of the current market trend. Use today's date, " +
             new Date().toLocaleDateString("en-US", { timeZone: "Asia/Dhaka" }) +
             ", for context.";
 
