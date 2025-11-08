@@ -4,7 +4,7 @@
 >
 > **Project Date:** November 2025
 >
-> 
+> **Video Walkthrough:** https://www.youtube.com/watch?v=akxiUMpG8HM
 
 ---
 
